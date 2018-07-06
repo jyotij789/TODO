@@ -1,0 +1,22 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>ToDo List</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+      <ion-list>
+          <ion-list-header>Navigtion</ion-list-header>
+          <button menuClose ion-item  (click)="openHome()">Home</button>
+          <button menuClose ion-item  (click)="openPnd()">Pending Items</button>
+          <button menuClose ion-item  (click)="openCmp()">Completed Items</button>
+          <button menuClose ion-item  (click)="openMap()">Map</button>
+
+        </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

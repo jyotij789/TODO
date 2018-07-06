@@ -1,0 +1,21 @@
+page-additems {
+    #rounded {
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 50px;
+        border-radius: 5px;
+        margin-bottom: 50px;
+        padding-left: 110px;     
+    }
+    #textfield {
+        width: 90%;
+        height: 50px;
+        border: 1px solid #fefeff;
+        margin-top: 50px; 
+        font-size:25px; 
+        padding-left: 10px;     
+    }
+
+    #head{
+        padding-left: 120px;
+    }
+}

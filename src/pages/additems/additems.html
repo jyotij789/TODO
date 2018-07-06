@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Home</ion-title>
+    </ion-navbar>
+  <ion-toolbar color="secondary">
+     <ion-title id="head">Add Items</ion-title>
+   </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+        <ion-item id="textfield"> 
+            <ion-input type="text" [(ngModel)]="name" placeholder="Item" required></ion-input>
+        </ion-item>
+        <ion-item id="rounded">
+            <button ion-button large (click)="onButtonClick()">Save Item</button>
+        </ion-item>
+      </ion-list>
+  </ion-content>
