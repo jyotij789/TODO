@@ -11,14 +11,33 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'additems.html',
 })
 export class AdditemsPage {
-  name;
-  details;
+   details:any;
   //toDoArray: any = [];
-  items: any;
+    items: any;
+    public todoList: Array<string>;
+    public name: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+    
   }
-
+  ionViewWillEnter(){
+    this.todoList = JSON.parse(localStorage.getItem("pendinglist"));
+    if(!this.todoList) {
+        this.todoList = [];
+    }
+    this.name = "";
+  }
+  saveTask() {
+    if(this.name!= "") {
+        this.details = {Name:this.name};
+        this.todoList.push(this.name);
+        localStorage.setItem("pendinglist", JSON.stringify(this.todoList));
+        this.navCtrl.push(PendinglistPage);
+    }
+    else{
+      this.presentAlert();
+    }
+}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AdditemsPage');
@@ -31,27 +50,8 @@ export class AdditemsPage {
     });
     alert.present();
   }
-  onButtonClick() {
-    if (this.name == '' || this.name == null) {
-      this.presentAlert();
-    }
-    else {
-      this.details = { Name: this.name };
-      var toDoArray=[];
-      
-      if(localStorage.getItem('todolist')==null) {
-        toDoArray.push(this.details);
-        localStorage.setItem('todolist', JSON.stringify(toDoArray));
-      }
-      else {
-        this.items = JSON.parse(localStorage.getItem('todolist'));
-        console.log(this.items);
-        toDoArray.push(this.items);
-        toDoArray.push(this.details);
-        localStorage.setItem('todolist', JSON.stringify(toDoArray))
-      }
-      this.navCtrl.push(PendinglistPage);
-    }
-  }
+
+
+
   
 }

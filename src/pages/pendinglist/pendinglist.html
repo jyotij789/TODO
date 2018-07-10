@@ -14,12 +14,11 @@
 <ion-content >
   <ion-list>
     <ion-item *ngFor="let result of results">
-      <ion-label>{{result.Name}} </ion-label>
+      <ion-label>{{result}} </ion-label>
         <button ion-button (click)="presentConfirm($event,result)" item-end>
           <ion-icon item-right name="close"></ion-icon>
         </button>
-              <button ion-button (click)="add()" item-end>
-                  <ion-checkbox color="dark" checked="false" item-end></ion-checkbox>
+              <button ion-button (click)="completeTask($event,result)" item-end>Done
               </button>  
     </ion-item>
    </ion-list>

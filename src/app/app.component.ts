@@ -8,6 +8,7 @@ import { PendinglistPage } from '../pages/pendinglist/pendinglist';
 import { CompletedlistPage } from '../pages/completedlist/completedlist';
 import { MapPage } from '../pages/map/map';
 import { GlobalPage} from '../pages/global/global'
+
 @Component({
   templateUrl: 'app.html'
 })

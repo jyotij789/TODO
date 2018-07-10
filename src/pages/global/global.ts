@@ -17,6 +17,6 @@ export class GlobalPage {
   }
 
 }
-export var global = {
- Project_Array:[]
-};
+// export var global = {
+//  Project_Array:[]
+// };

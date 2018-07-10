@@ -6,17 +6,17 @@
       <ion-title>Home</ion-title>
     </ion-navbar>
   <ion-toolbar color="secondary">
-     <ion-title id="head">Add Items</ion-title>
+     <ion-title id="head">Add Task</ion-title>
    </ion-toolbar>
   </ion-header>
   
   <ion-content>
     <ion-list>
         <ion-item id="textfield"> 
-            <ion-input type="text" [(ngModel)]="name" placeholder="Item" required></ion-input>
+            <ion-input type="text" [(ngModel)]="name" placeholder="todo task" required></ion-input>
         </ion-item>
         <ion-item id="rounded">
-            <button ion-button large (click)="onButtonClick()">Save Item</button>
+            <button ion-button large (click)="saveTask()">Save task</button>
         </ion-item>
       </ion-list>
   </ion-content>

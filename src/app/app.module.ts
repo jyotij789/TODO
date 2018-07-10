@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+//  import { LocalNotifications } from '@ionic-native/local-notifications';
+ import { Vibration } from '@ionic-native/vibration';
 
 import { AdditemsPage} from '../pages/additems/additems'
 import { MyApp } from './app.component';
@@ -33,6 +35,7 @@ import { MapPage } from '../pages/map/map';
   providers: [
     StatusBar,
     SplashScreen,
+    Vibration,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
