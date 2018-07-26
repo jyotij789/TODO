@@ -1,3 +1,17 @@
-page-map {
 
+.platform-android, .platform-ios, .platform-browser,.platform-cordova{
+ 
+    page-map {
+ 
+      .scroll {
+        height: 100%;
+      }
+ 
+      #map {
+        width: 100%;
+        height: 100%;
+      }
+ 
+    }
+ 
 }

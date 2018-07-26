@@ -6,7 +6,7 @@
         </button>
         <ion-title>Completed Items</ion-title>
         <ion-buttons end>
-            <button ion-button icon-only>clear</button>
+            <button ion-button icon-only (click)="clearTodos($event,completedTodos)">Clear</button>
         </ion-buttons>
       </ion-navbar>
 </ion-header>
@@ -14,8 +14,8 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let task of completedtask">
-     <ion-label> {{task}}</ion-label>
+    <ion-item *ngFor="let todo of completedTodos">
+     <ion-label> {{todo.Name}}</ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

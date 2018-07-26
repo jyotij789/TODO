@@ -14,7 +14,7 @@
 <ion-content >
   <ion-list>
     <ion-item *ngFor="let result of results">
-      <ion-label>{{result}} </ion-label>
+      <ion-label>{{result.Name}} </ion-label>
         <button ion-button (click)="presentConfirm($event,result)" item-end>
           <ion-icon item-right name="close"></ion-icon>
         </button>

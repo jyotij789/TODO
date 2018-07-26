@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PendinglistPage } from '../pendinglist/pendinglist';
 import { AlertController } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
 
 
 @IonicPage()
@@ -11,36 +10,36 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'additems.html',
 })
 export class AdditemsPage {
-   details:any;
-  //toDoArray: any = [];
-    items: any;
-    public todoList: Array<string>;
-    public name: string;
+  details: any;
+  items: any;
+  public todoList: Array<{ status : number, Name: string }>;
+  public name: string;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
-    
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+
   }
-  ionViewWillEnter(){
-    this.todoList = JSON.parse(localStorage.getItem("pendinglist"));
-    if(!this.todoList) {
-        this.todoList = [];
+  
+  ionViewWillEnter() {
+    this.todoList = JSON.parse(localStorage.getItem("todoslist"));
+    if (!this.todoList) {
+      this.todoList = [];
     }
     this.name = "";
   }
   saveTask() {
-    if(this.name!= "") {
-        this.details = {Name:this.name};
-        this.todoList.push(this.name);
-        localStorage.setItem("pendinglist", JSON.stringify(this.todoList));
-        this.navCtrl.push(PendinglistPage);
+    if (this.name != "") {
+      this.details = { status:0, Name:this.name };
+      this.todoList.push(this.details);
+      localStorage.setItem("todoslist", JSON.stringify(this.todoList));
+      this.navCtrl.push(PendinglistPage);
     }
-    else{
+    else {
       this.presentAlert();
     }
-}
+  }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AdditemsPage');
+    // this.navCtrl.setRoot(this.navCtrl.getActive().component);
   }
   presentAlert() {
     let alert = this.alertCtrl.create({
@@ -53,5 +52,5 @@ export class AdditemsPage {
 
 
 
-  
+
 }
