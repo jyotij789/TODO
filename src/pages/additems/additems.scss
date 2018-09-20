@@ -1,22 +1,35 @@
 page-additems {
-    #rounded {
+    .rounded {
         -moz-border-radius: 20px;
         -webkit-border-radius: 50px;
         border-radius: 5px;
         margin-bottom: 50px;
-        padding-left: 110px;     
+        align-self: center;
+        align-content: center;align-items: center;
     }
-    #textfield {
+    .button{
+        align-self: center;
+        align-content: center;
+        align-items: center;
+        left:17%;
+        border-bottom:none;
+        width: 50%;
+        height:30%;
+        font-size: 1rem;
+        margin-top:50px;
+    }
+   
+    .textfield {
         width: 90%;
         height: 50px;
         border: 1px solid #fefeff;
-        margin-top: 50px; 
+        margin-top: 100px; 
         font-size:25px; 
         padding-left: 10px;     
     }
 
-    #head{
-        padding-left: 120px;
+    ion-toolbar ion-title{
+        text-align: center;
     }
     
 }

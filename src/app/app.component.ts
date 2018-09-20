@@ -7,50 +7,44 @@ import { PendinglistPage } from '../pages/pendinglist/pendinglist';
 import { CompletedlistPage } from '../pages/completedlist/completedlist';
 import { MapPage } from '../pages/map/map';
 @Component({
-  templateUrl: 'app.html'
+    templateUrl: 'app.html'
 })
 export class MyApp {
-  @ViewChild(Nav) nav: Nav;
+    @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = AdditemsPage;
+    rootPage: any = AdditemsPage;
 
-  pages: Array<{title: string, component: any}>;
+    pages: Array<{ title: string, component: any }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    this.initializeApp();
+    constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+        this.initializeApp();
 
-    // used for an example of ngFor and navigation
-    // this.pages=[
-    //   {title:'Home', component:FirstpagePage},
-    //   {title:'Pending Items', component:PendinglistPage},
-    //   {title:'Completed Items', component:CompletedlistPage},
-    //   {title:'Map', component:MapPage}
-    // ]
-  }
 
-  initializeApp() {
-    this.platform.ready().then(() => {
+    }
+
+    initializeApp() {
+        this.platform.ready().then(() => {
             this.splashScreen.hide();
 
-    });
-  }
+        });
+    }
 
-  // openPage(page) {
-  //   // Reset the content nav to have just this page
-  //   // we wouldn't want the back button to show in this scenario
-  //   this.nav.setRoot(page.component);
-  // }
-openHome(){
-  this.nav.push(AdditemsPage);
-  
-}  
-openPnd(){
-  this.nav.push(PendinglistPage);
-}
-openCmp(){
-  this.nav.push(CompletedlistPage);
-}
-openMap(){
-  this.nav.push(MapPage);
-}
+    // openPage(page) {
+    //   // Reset the content nav to have just this page
+    //   // we wouldn't want the back button to show in this scenario
+    //   this.nav.setRoot(page.component);
+    // }
+    openHome() {
+        this.nav.setRoot(AdditemsPage);
+
+    }
+    openPnd() {
+        this.nav.setRoot(PendinglistPage);
+    }
+    openCmp() {
+        this.nav.setRoot(CompletedlistPage);
+    }
+    openMap() {
+        this.nav.setRoot(MapPage);
+    }
 }

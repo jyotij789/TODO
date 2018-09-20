@@ -1,22 +1,21 @@
 <ion-header>
     <ion-navbar color="primary">
-      <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-      <ion-title>Home</ion-title>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Home</ion-title>
     </ion-navbar>
-  <ion-toolbar color="secondary">
-     <ion-title id="head">Add Task</ion-title>
-   </ion-toolbar>
-  </ion-header>
-  
-  <ion-content>
-    <ion-list>
-        <ion-item id="textfield"> 
-            <ion-input type="text" [(ngModel)]="name" placeholder="todo task" required></ion-input>
-        </ion-item>
-        <ion-item id="rounded">
-            <button ion-button large (click)="saveTask()">Save task</button>
-        </ion-item>
-      </ion-list>
-  </ion-content>
+    <ion-toolbar color="secondary">
+        <ion-title>Add Task</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item class="textfield">
+        <ion-input type="text" [(ngModel)]="name" placeholder="todo task" required></ion-input>
+    </ion-item>
+    <div class="button">
+        <button ion-button large (click)="saveTask()">Save task</button>
+    </div>
+
+</ion-content>
