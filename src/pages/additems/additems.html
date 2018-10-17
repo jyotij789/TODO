@@ -11,11 +11,23 @@
 </ion-header>
 
 <ion-content>
-    <ion-item class="textfield">
-        <ion-input type="text" [(ngModel)]="name" placeholder="todo task" required></ion-input>
-    </ion-item>
-    <div class="button">
-        <button ion-button large (click)="saveTask()">Save task</button>
-    </div>
+    <br>
+    <br>
+    <ion-row style="margin-top:40px;">
+        <ion-item class="textfield">
+            <ion-input type="text" [(ngModel)]="name" placeholder="todo task" required></ion-input>
+        </ion-item>
+    </ion-row>
+    <ion-row>
+        <br>
+        <br>
+    </ion-row>
+    <ion-row>
+
+        <div class="button">
+            <button ion-button large (click)="saveTask()">Save task</button>
+        </div>
+
+    </ion-row>
 
 </ion-content>
